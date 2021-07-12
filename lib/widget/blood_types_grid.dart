@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rodekruis/model/blood_type.dart';
+
+import '../model/blood_type.dart';
 
 class BloodTypesGrid extends StatelessWidget {
   final String _label;

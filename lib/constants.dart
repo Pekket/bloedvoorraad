@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 const MaterialColor PRIMARY_COLOR = Colors.red;
 const Color BACKGROUND_COLOR = Colors.white;
 
+const String DATA_URL = "https://europe-west1-rodekruis-bloedvoorraad.cloudfunctions.net/bloedvoorraad";
+
 const String LOADING_IMAGE = "assets/images/bloodloading.gif";
 const String SAVE = "Opslaan";
 

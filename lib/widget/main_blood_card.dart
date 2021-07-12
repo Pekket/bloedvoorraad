@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rodekruis/screen/blood_type_overview.dart';
 
+import '../screen/blood_type_overview.dart';
 import '../model/blood_supply_type.dart';
 
 class MainBloodCard extends StatelessWidget {

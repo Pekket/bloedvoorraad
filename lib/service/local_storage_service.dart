@@ -1,5 +1,6 @@
-import 'package:rodekruis/model/blood_type.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../model/blood_type.dart';
 
 const BLOOD_TYPE_PREFERNCE = "bloodType";
 const NOTIFICATION_PREFERNCE = "notificationsEnabled";

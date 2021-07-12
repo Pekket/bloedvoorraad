@@ -1,14 +1,14 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import '../model/blood_supply_type.dart';
+import '../constants.dart' as Constants;
 
-const URL = "https://europe-west1-rodekruis-bloedvoorraad.cloudfunctions.net/bloedvoorraad";
+import '../model/blood_supply_type.dart';
 
 class BloodSupplyService {
 
   static Future<List<BloodSupply>> fetchData() async {
-    final response = await http.get(Uri.parse(URL));
+    final response = await http.get(Uri.parse(Constants.DATA_URL));
 
     if (response.statusCode == 200) {
       return (jsonDecode(response.body) as List<dynamic>)
