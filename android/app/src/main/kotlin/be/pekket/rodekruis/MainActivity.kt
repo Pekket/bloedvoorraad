@@ -1,0 +1,6 @@
+package be.pekket.rodekruis
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
