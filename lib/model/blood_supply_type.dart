@@ -13,8 +13,7 @@ class BloodSupply {
         BloodSupplyStatus.values.firstWhere((e) => e.name == json['status']);
   }
 
-  //TODO why this?
-  String get typeLabel {
+    String get typeLabel {
     return type.name;
   }
 

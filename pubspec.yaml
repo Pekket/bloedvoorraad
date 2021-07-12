@@ -1,5 +1,5 @@
-name: rodekruis
-description: Rode kruis bloedvoorraad app
+name: bloedvoorraad
+description: Check de bloedvoorraad van het Rode Kruis
 
 publish_to: 'none'
 version: 1.0.0+1
