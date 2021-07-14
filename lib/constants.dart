@@ -24,3 +24,13 @@ const String SHARE_URL="www.rodekruis.be/wat-kan-jij-doen/geef-bloed-of-plasma/w
 const String SHARE_MESSAGE="Wees een held en doneer bloed! $SHARE_URL";
 const String SHARE_BTN_LABEL="of overtuig je vrienden";
 
+const String PRIVACY_TITLE = "Privacy";
+const String PRIVACY_DESCRIPTION = "Je bloedgroep wordt enkel op je eigen toestel opgeslagen en zal enkel gebruikt worden om gerichte notificaties te sturen.";
+const String DATA_TITLE = "Data";
+const String DATA_DESCRIPTION = "We zijn niet verantwoorlijk voor de data van de bloedvoorraad. We gebruiken hier de data op van het Rode Kruis.";
+const String ORG_TITLE = "Rode kruis";
+const String ORG_DESCRIPTION = "Dit is geen officiële app van het Rode Kruis. Deze app is bedoelt als persoonlijk project en mensen aan te moedigen bloed te gaan doneren.";
+const String CODE_TITLE = "Code";
+const String CODE_DESCRIPTION = "Bekijk/comment/star deze app op Github.";
+const String CODE_GITHUB_ICON = "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png";
+const String CODE_GITHUB_URL = "https://github.com/Pekket/bloedvoorraad";

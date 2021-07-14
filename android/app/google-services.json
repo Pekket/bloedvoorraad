@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "92268165641",
+    "project_id": "rodekruis-bloedvoorraad",
+    "storage_bucket": "rodekruis-bloedvoorraad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92268165641:android:eee6965a5f7dd9d97c16d8",
+        "android_client_info": {
+          "package_name": "be.pekket.rodekruis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92268165641-dnsnq4hkh1f6ue9cu33spi17giekjqj7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrjvliP03SsZjjk0IrLSSvnSXKVS54Rzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92268165641-dnsnq4hkh1f6ue9cu33spi17giekjqj7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
