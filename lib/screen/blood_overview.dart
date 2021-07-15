@@ -44,7 +44,8 @@ class _BloodTypesOverviewState extends State<BloodTypesOverview> {
               _loading = false;
               _bloodSupplies = data;
             })
-          });
+          })
+  .catchError((error) {ScaffoldMessenger.of(context).showSnackBar(_snackBar);});
 
   @override
   Widget build(BuildContext context) {
@@ -69,9 +70,7 @@ class _BloodTypesOverviewState extends State<BloodTypesOverview> {
                   MainBloodCard(
                       _bloodSupplies.firstWhere((el) => el.type == _bloodType),
                       true),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  SizedBox(height: 20),
                   ..._bloodSupplies
                       .where((el) => el.type != _bloodType)
                       .map((el) => BloodCard(el))
@@ -90,4 +89,12 @@ class _BloodTypesOverviewState extends State<BloodTypesOverview> {
             ),
     );
   }
+
+  SnackBar get _snackBar => SnackBar(
+    backgroundColor: Colors.red,
+    content: Text(
+      Constants.BLOODSUPPLY_FETCH_ERROR,
+      style: TextStyle(fontSize: 16, color: Colors.white),
+    ),
+  );
 }
