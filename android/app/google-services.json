@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:92268165641:android:9ee93083307335407c16d8",
+        "android_client_info": {
+          "package_name": "be.pekket.bloedvoorraad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92268165641-dnsnq4hkh1f6ue9cu33spi17giekjqj7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrjvliP03SsZjjk0IrLSSvnSXKVS54Rzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92268165641-dnsnq4hkh1f6ue9cu33spi17giekjqj7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "92268165641-deb60qfogfmirnr13m0vke97p31v6gnu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "be.pekket.rodekruis"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:92268165641:android:eee6965a5f7dd9d97c16d8",
         "android_client_info": {
           "package_name": "be.pekket.rodekruis"
@@ -29,6 +65,13 @@
             {
               "client_id": "92268165641-dnsnq4hkh1f6ue9cu33spi17giekjqj7.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "92268165641-deb60qfogfmirnr13m0vke97p31v6gnu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "be.pekket.rodekruis"
+              }
             }
           ]
         }

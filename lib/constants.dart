@@ -15,6 +15,7 @@ const String PROFILE_ENABLE_NOTIFICATIONS = "Wil je notificaties ontvangen?";
 
 const String BLOODSUPPLY_CAN_DONATE="Mag bloed geven aan:";
 const String BLOODSUPPLY_CAN_RECEIVE="Mag bloed krijgen van:";
+const String BLOODSUPPLY_FETCH_ERROR="Er liep iets fout bij het refreshen.";
 
 const String APPOINTMENT_BTN_LABEL="Maak een afspraak";
 const String APPOINTMENT_URL="https://www.rodekruis.be/wat-kan-jij-doen/geef-bloed-of-plasma/waar-bloed-of-plasma-geven/";
