@@ -1,6 +1,30 @@
 enum BloodType { apos, oneg, opos, aneg, bneg, bpos, abneg, abpos }
 
 extension BloodTypeExtension on BloodType {
+
+  static BloodType? getBloodType(String value) {
+    switch (value) {
+      case "BloodType.apos":
+        return BloodType.apos;
+      case "BloodType.oneg":
+        return BloodType.oneg;
+      case "BloodType.opos":
+        return BloodType.opos;
+      case "BloodType.aneg":
+        return BloodType.aneg;
+      case "BloodType.bneg":
+        return BloodType.bneg;
+      case "BloodType.bpos":
+        return BloodType.bpos;
+      case "BloodType.abneg":
+        return BloodType.abneg;
+      case "BloodType.abpos":
+        return BloodType.abpos;
+      default:
+        return null;
+    }
+  }
+
   String get name {
     switch (this) {
       case BloodType.apos:

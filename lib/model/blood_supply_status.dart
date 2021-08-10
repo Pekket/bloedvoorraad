@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 enum BloodSupplyStatus { kritisch, laag, goed }
 
 extension BloodSupplyStatusExtension on BloodSupplyStatus {
@@ -13,25 +16,25 @@ extension BloodSupplyStatusExtension on BloodSupplyStatus {
     }
   }
 
-  String get label {
+  String label(BuildContext context) {
     switch (this) {
       case BloodSupplyStatus.kritisch:
-        return "Kritische voorraad";
+        return AppLocalizations.of(context)!.bloodSupplyStatusCritical;
       case BloodSupplyStatus.laag:
-        return "Lage voorraad";
+        return AppLocalizations.of(context)!.bloodSupplyStatusLow;
       case BloodSupplyStatus.goed:
-        return "Voldoende voorraad";
+        return AppLocalizations.of(context)!.bloodSupplyStatusGood;
     }
   }
 
-  String get description {
+  String description(BuildContext context) {
     switch (this) {
       case BloodSupplyStatus.kritisch:
-        return "De bloedvoorraad van jouw bloedgroep is kritiek.";
+        return AppLocalizations.of(context)!.bloodSupplyStatusCriticalDescription;
       case BloodSupplyStatus.laag:
-        return "De bloedvoorraad van deze bloedgroep is laag.";
+        return AppLocalizations.of(context)!.bloodSupplyStatusLowDescription;
       case BloodSupplyStatus.goed:
-        return "De bloedvoorraad van deze bloedgroep is voldoende hoog.";
+        return AppLocalizations.of(context)!.bloodSupplyStatusGoodDescription;
     }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../constants.dart' as Constants;
 
@@ -19,7 +20,7 @@ class BloodTypeOverview extends StatelessWidget {
     if (await canLaunch(Constants.APPOINTMENT_URL)) {
        await launch(Constants.APPOINTMENT_URL);
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(_snackBar);
+      ScaffoldMessenger.of(context).showSnackBar(_snackBar(context));
     }
   }
 
@@ -32,13 +33,13 @@ class BloodTypeOverview extends StatelessWidget {
         child: Column(
           children: [
             MainBloodCard(_bloodSupply, false),
-            BloodTypesGrid(_bloodSupply.canDonate, Constants.BLOODSUPPLY_CAN_DONATE),
-            BloodTypesGrid(_bloodSupply.canReceive, Constants.BLOODSUPPLY_CAN_RECEIVE),
+            BloodTypesGrid(_bloodSupply.canDonate, AppLocalizations.of(context)!.bloodSupplyCanDonate),
+            BloodTypesGrid(_bloodSupply.canReceive, AppLocalizations.of(context)!.bloodSupplyCanReceive),
             Spacer(),
             Center(
               child: ElevatedButton(
                 onPressed: () => _launchAppointment(context),
-                child: Text(Constants.APPOINTMENT_BTN_LABEL),
+                child: Text(AppLocalizations.of(context)!.appointmentBtnLabel),
               ),
             ),
             ShareButton()
@@ -48,10 +49,10 @@ class BloodTypeOverview extends StatelessWidget {
     );
   }
 
-  SnackBar get _snackBar => SnackBar(
+  SnackBar _snackBar(BuildContext context) => SnackBar(
       backgroundColor: Colors.red,
       content: Text(
-        Constants.APPOINTMENT_ERROR_MESSAGE,
+        AppLocalizations.of(context)!.appointmentBtnError,
         style: TextStyle(fontSize: 16),
       ),
     );

@@ -13,25 +13,12 @@ class BloodSupply {
         BloodSupplyStatus.values.firstWhere((e) => e.name == json['status']);
   }
 
-    String get typeLabel {
-    return type.name;
-  }
+  String get typeLabel =>type.name;
+  List<BloodType> get canDonate => type.canDonate;
+  List<BloodType> get canReceive => type.canReceive;
 
-  String get statusLabel {
-    return status.label;
-  }
-
-  List<BloodType> get canDonate {
-    return type.canDonate;
-  }
-
-  List<BloodType> get canReceive {
-    return type.canReceive;
-  }
-
-  String get statusDescription {
-    return status.description;
-  }
+  String statusLabel(BuildContext context) => status.label(context);
+  String statusDescription(BuildContext context) => status.description(context);
 
   Color get statusColor {
     switch (status) {

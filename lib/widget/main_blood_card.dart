@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart' as Constants;
+
 import '../model/blood_supply_type.dart';
 import '../screen/blood_type_overview.dart';
 
@@ -32,14 +34,14 @@ class MainBloodCard extends StatelessWidget {
                 children: [
                   Text(
                     _bloodSupply.typeLabel,
-                    style: TextStyle(color: Colors.white, fontSize: 48),
+                    style: TextStyle(color: Constants.WHITE_COLOR, fontSize: 48),
                   ),
                   SizedBox(width: 24),
                   Expanded(
                     child: Text(
-                      _bloodSupply.statusLabel,
+                      _bloodSupply.statusLabel(context),
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white, fontSize: 24),
+                      style: TextStyle(color: Constants.WHITE_COLOR, fontSize: 24),
                     ),
                   ),
                 ],
@@ -49,14 +51,14 @@ class MainBloodCard extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      _bloodSupply.statusDescription,
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      _bloodSupply.statusDescription(context),
+                      style: TextStyle(color: Constants.WHITE_COLOR, fontSize: 16),
                     ),
                   ),
                   _clickable
                       ? Icon(
                           Icons.navigate_next,
-                          color: Colors.white,
+                          color: Constants.WHITE_COLOR,
                           size: 32,
                         )
                       : SizedBox.shrink()

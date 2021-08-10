@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 import '../constants.dart' as Constants;
+
 import '../model/blood_type.dart';
 import '../screen/blood_overview.dart';
-import '../service/local_storage_service.dart';
-import '../service/notification_service.dart';
-import '../widget/info_bottom_sheet.dart';
+import '../user_provider.dart';
 import '../widget/type_chooser.dart';
 
 class UserProfile extends StatefulWidget {
@@ -17,44 +18,20 @@ class UserProfile extends StatefulWidget {
 }
 
 class _UserProfileState extends State<UserProfile> {
-  bool _notificationsEnabled = false;
-  BloodType? _bloodType;
+  BloodType? _tmpBloodType;
 
   @override
   void initState() {
     super.initState();
 
-    LocalStorage.getSavedBloodType().then((bt) {
-      setState(() {
-        _bloodType = bt;
-      });
-    });
-
-    LocalStorage.getSavedNotificationsEnabled().then((enabled) {
-      setState(() {
-        _notificationsEnabled = enabled ?? false;
-      });
-    });
-  }
-
-  void _handleCheckbox() {
-    if (_notificationsEnabled)
-      setState(() => _notificationsEnabled = false);
-    else
-      NotificationService.requestPermission().then((notificationEnabled) =>
-          {setState(() => _notificationsEnabled = notificationEnabled)});
+    _tmpBloodType = context.read<UserProvider>().bloodType;
   }
 
   void _handleBloodType(BloodType bloodType) =>
-      setState(() => _bloodType = bloodType);
+      setState(() => _tmpBloodType = bloodType);
 
   void _saveProfile() async {
-    LocalStorage.savePreferences(_bloodType, _notificationsEnabled);
-
-    NotificationService.unsubscribeFromTopic();
-
-    if (_notificationsEnabled)
-      NotificationService.subscribeToTopic(_bloodType!.serverName);
+    Provider.of<UserProvider>(context, listen: false).updateBloodType(_tmpBloodType!);
 
     Navigator.of(context).pushNamedAndRemoveUntil(
         BloodTypesOverview.id, (Route<dynamic> route) => false);
@@ -67,20 +44,8 @@ class _UserProfileState extends State<UserProfile> {
     return Scaffold(
       backgroundColor: Color(Constants.PROFILE_BACKGROUND),
       appBar: AppBar(
-        title: Text('Profiel'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              showModalBottomSheet<void>(
-                context: context,
-                builder: (BuildContext context) {
-                  return InfoBottomSheet();
-                },
-              );
-            },
-            icon: Icon(CupertinoIcons.info),
-          )
-        ],
+        title: Text(AppLocalizations.of(context)!.profileTitle),
+        leading: Container(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -94,23 +59,19 @@ class _UserProfileState extends State<UserProfile> {
               ),
             ),
             Text(
-              Constants.PROFILE_CHOOSE_BLOODTYPE,
+              AppLocalizations.of(context)!.profileChooseBloodType,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             Expanded(
-              child: BloodTypeChooser(_bloodType, _handleBloodType),
-            ),
-            CheckboxListTile(
-              title: Text(Constants.PROFILE_ENABLE_NOTIFICATIONS),
-              onChanged: (_) => _handleCheckbox(),
-              value: _notificationsEnabled,
+              child: BloodTypeChooser(_tmpBloodType, _handleBloodType),
             ),
             ElevatedButton(
-              onPressed: _bloodType != null ? _saveProfile : null,
+              onPressed: _tmpBloodType != null ? _saveProfile : null,
               child: Text(
-                Constants.SAVE,
+                AppLocalizations.of(context)!.save,
               ),
             ),
+            Text(AppLocalizations.of(context)!.profilePrivacy),
           ],
         ),
       ),

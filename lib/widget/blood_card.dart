@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart' as Constants;
+
 import '../model/blood_supply_type.dart';
 import '../screen/blood_type_overview.dart';
 
@@ -29,16 +31,16 @@ class BloodCard extends StatelessWidget {
             children: [
               Text(
                 _bloodSupply.typeLabel,
-                style: TextStyle(color: Colors.white, fontSize: 32),
+                style: TextStyle(color: Constants.WHITE_COLOR, fontSize: 32),
               ),
               Spacer(),
               Text(
-                _bloodSupply.statusLabel,
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                _bloodSupply.statusLabel(context),
+                style: TextStyle(color: Constants.WHITE_COLOR, fontSize: 16),
               ),
               Icon(
                 Icons.navigate_next,
-                color: Colors.white,
+                color: Constants.WHITE_COLOR,
                 size: 32,
               ),
             ],

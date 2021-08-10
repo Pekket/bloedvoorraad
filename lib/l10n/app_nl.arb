@@ -1,0 +1,39 @@
+{
+  "appTitle": "Bloedvoorraad",
+  "save": "Opslaan",
+
+  "drawerChangeBloodType": "Verander je bloedgroep",
+  "drawerFamily": "Familie",
+  "drawerSettings": "Instellingen",
+  "drawerAboutApp": "Over deze App",
+
+  "profileTitle": "Profiel",
+  "profileChooseBloodType": "Kies je bloedgroep",
+  "profilePrivacy": "Je bloedgroep wordt enkel op je eigen toestel opgeslagen",
+
+  "bloodSupplyCanDonate": "Mag bloed geven aan:",
+  "bloodSupplyCanReceive": "Mag bloed krijgen van:",
+  "bloodSupplyFetchError": "Er liep iets fout bij het refreshen.",
+
+  "appointmentBtnLabel": "Maak een afspraak",
+  "appointmentBtnError": "Oops er ging wat mis. Surf voor een afspraak naar rodekruis.be",
+
+  "shareBtnLabel": "of overtuig je vrienden",
+  "shareMessage": "Wees een held en doneer bloed!",
+
+  "familyTitle":  "Voeg een familielid toe",
+  "familyNameLabel": "Naam",
+  "familyEmptyList": "Geen familieleden toegevoegd",
+
+  "settingsTitle": "Instellingen",
+  "settingsNotificationsSub": "We sturen je een notificatie wanneer je bloedgroep een lage voorraad heeft.",
+  "settingsNotificationsEnable": "Notificaties activeren",
+  "settingsLanguageTitle": "Taal",
+
+  "bloodSupplyStatusCritical": "Kritische voorraad",
+  "bloodSupplyStatusLow": "Lage voorraad",
+  "bloodSupplyStatusGood": "Voldoende voorraad",
+  "bloodSupplyStatusCriticalDescription": "De bloedvoorraad van deze bloedgroep is kritiek.",
+  "bloodSupplyStatusLowDescription": "De bloedvoorraad van deze bloedgroep is laag.",
+  "bloodSupplyStatusGoodDescription": "De bloedvoorraad van deze bloedgroep is voldoende hoog."
+}

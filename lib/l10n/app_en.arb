@@ -1,0 +1,39 @@
+{
+  "appTitle": "You are a hero",
+  "save": "Save",
+
+  "drawerChangeBloodType": "Change blood type",
+  "drawerFamily": "Family",
+  "drawerSettings": "Settings",
+  "drawerAboutApp": "About this app",
+
+  "profileTitle": "Profile",
+  "profileChooseBloodType": "Choose blood type",
+  "profilePrivacy": "Your blood type will only be saved on this device",
+
+  "bloodSupplyCanDonate": "Can donate blood to:",
+  "bloodSupplyCanReceive": "Can receive blood from:",
+  "bloodSupplyFetchError": "Something went wrong while retrieving the data.",
+
+  "appointmentBtnLabel": "Make an appointment",
+  "appointmentBtnError": "Oops something went wrong. Go to rodekruis.be",
+
+  "shareBtnLabel": "or motivate your friends",
+  "shareMessage": "Become a hero DONATE BLOOD!",
+
+  "familyTitle":  "Add family member",
+  "familyNameLabel": "Name",
+  "familyEmptyList": "No family member added yet",
+
+  "settingsTitle": "Settings",
+  "settingsNotificationsSub": "We send a notification when the stock of your blood type is low",
+  "settingsNotificationsEnable": "Enable notifications",
+  "settingsLanguageTitle": "Language",
+
+  "bloodSupplyStatusCritical": "Critical stock",
+  "bloodSupplyStatusLow": "Low stock",
+  "bloodSupplyStatusGood": "Sufficient stock",
+  "bloodSupplyStatusCriticalDescription": "The stock for this blood type is critical low.",
+  "bloodSupplyStatusLowDescription": "The stock for this blood type is low.",
+  "bloodSupplyStatusGoodDescription": "The stock for this blood type is sufficient."
+}

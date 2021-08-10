@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart' as Constants;
+
 import '../model/blood_type.dart';
 
 class BloodTypeChooser extends StatelessWidget {
@@ -22,7 +24,7 @@ class BloodTypeChooser extends StatelessWidget {
           style: ButtonStyle(
             padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 4.0)),
             backgroundColor: type == _bloodType
-                ? MaterialStateProperty.all(Colors.red)
+                ? MaterialStateProperty.all(Constants.PRIMARY_COLOR)
                 : MaterialStateProperty.all(Colors.transparent),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
@@ -33,7 +35,7 @@ class BloodTypeChooser extends StatelessWidget {
           child: Text(
             type.name,
             style: TextStyle(
-                color: type == _bloodType ? Colors.white : Colors.red),
+                color: type == _bloodType ? Constants.WHITE_COLOR : Constants.PRIMARY_COLOR),
           ),
         );
       }).toList(),
