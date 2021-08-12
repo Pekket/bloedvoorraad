@@ -39,7 +39,7 @@ class _BloodTypesOverviewState extends State<BloodTypesOverview> {
       body: FutureBuilder(
           future: BloodSupplyService.fetchData(),
           builder: (context, AsyncSnapshot snapshot) {
-            if (snapshot.hasData && _bloodType != null)
+            if (snapshot.hasData && _bloodType != null) {
               return ListView(
                 padding: EdgeInsets.all(32.0),
                 children: [
@@ -48,7 +48,10 @@ class _BloodTypesOverviewState extends State<BloodTypesOverview> {
                   ...snapshot.data.where((el) => el.type != _bloodType).map((el) => BloodCard(el)).toList(),
                 ],
               );
-            else if (snapshot.hasError) ScaffoldMessenger.of(context).showSnackBar(_snackBar);
+            }
+            if (snapshot.hasError) {
+              ScaffoldMessenger.of(context).showSnackBar(_snackBar);
+            }
             return Loader(_size.height * 0.3);
           }),
     );
