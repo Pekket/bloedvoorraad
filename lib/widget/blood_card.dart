@@ -25,8 +25,7 @@ class BloodCard extends StatelessWidget {
       child: InkWell(
         onTap: () => _onNavigate(context),
         child: Padding(
-          padding:
-              const EdgeInsets.only(top: 32, right: 16, bottom: 32, left: 32),
+          padding: const EdgeInsets.only(top: 32, right: 16, bottom: 32, left: 32),
           child: Row(
             children: [
               Text(

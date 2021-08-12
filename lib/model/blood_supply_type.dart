@@ -9,11 +9,10 @@ class BloodSupply {
 
   BloodSupply.json(Map<String, dynamic> json) {
     type = BloodType.values.firstWhere((e) => e.serverName == json['type']);
-    status =
-        BloodSupplyStatus.values.firstWhere((e) => e.name == json['status']);
+    status = BloodSupplyStatus.values.firstWhere((e) => e.name == json['status']);
   }
 
-  String get typeLabel =>type.name;
+  String get typeLabel => type.name;
   List<BloodType> get canDonate => type.canDonate;
   List<BloodType> get canReceive => type.canReceive;
 
@@ -22,9 +21,9 @@ class BloodSupply {
 
   Color get statusColor {
     switch (status) {
-      case BloodSupplyStatus.kritisch:
+      case BloodSupplyStatus.critical:
         return Colors.red;
-      case BloodSupplyStatus.laag:
+      case BloodSupplyStatus.low:
         return Colors.orange;
       default:
         return Colors.greenAccent;

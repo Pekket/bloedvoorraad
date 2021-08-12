@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -21,17 +20,16 @@ class BloodTypesOverview extends StatefulWidget {
 }
 
 class _BloodTypesOverviewState extends State<BloodTypesOverview> {
-
-  void _handleProfileNavigate() => WidgetsBinding.instance!.addPostFrameCallback((_){
-      Navigator.pushNamed(context, UserProfile.id);
-  });
+  void _handleProfileNavigate() => WidgetsBinding.instance!.addPostFrameCallback((_) {
+        Navigator.pushNamed(context, UserProfile.id);
+      });
 
   @override
   Widget build(BuildContext context) {
     final _size = MediaQuery.of(context).size;
     final _bloodType = context.read<UserProvider>().bloodType;
 
-    if(_bloodType == null) _handleProfileNavigate();
+    if (_bloodType == null) _handleProfileNavigate();
 
     return Scaffold(
       drawer: AppDrawer(),
@@ -45,18 +43,12 @@ class _BloodTypesOverviewState extends State<BloodTypesOverview> {
               return ListView(
                 padding: EdgeInsets.all(32.0),
                 children: [
-                  MainBloodCard(
-                      snapshot.data.firstWhere((el) => el.type == _bloodType),
-                      true),
+                  MainBloodCard(snapshot.data.firstWhere((el) => el.type == _bloodType), true),
                   SizedBox(height: 20),
-                  ...snapshot.data
-                      .where((el) => el.type != _bloodType)
-                      .map((el) => BloodCard(el))
-                      .toList()
+                  ...snapshot.data.where((el) => el.type != _bloodType).map((el) => BloodCard(el)).toList(),
                 ],
               );
-            else if (snapshot.hasError)
-              ScaffoldMessenger.of(context).showSnackBar(_snackBar);
+            else if (snapshot.hasError) ScaffoldMessenger.of(context).showSnackBar(_snackBar);
             return Loader(_size.height * 0.3);
           }),
     );

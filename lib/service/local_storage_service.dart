@@ -14,9 +14,7 @@ class LocalStorage {
   static Future<BloodType?> getSavedBloodType() async {
     final prefs = await sharedPreferencesInstance;
     String? savedBloodType = prefs.getString(BLOOD_TYPE_PREFERNCE);
-    return savedBloodType != null
-        ? BloodType.values.firstWhere((e) => e.toString() == savedBloodType)
-        : null;
+    return savedBloodType != null ? BloodType.values.firstWhere((e) => e.toString() == savedBloodType) : null;
   }
 
   static Future<Locale> getSavedLocale() async {
@@ -33,11 +31,7 @@ class LocalStorage {
   static Future<List<FamilyMember>> getFamilyMembers() async {
     final prefs = await sharedPreferencesInstance;
     List<String>? familyMemberList = prefs.getStringList(FAMILY_MEMBERS);
-    return familyMemberList != null
-        ? familyMemberList
-            .map((e) => FamilyMember.fromJson(json.decode(e)))
-            .toList()
-        : [];
+    return familyMemberList != null ? familyMemberList.map((e) => FamilyMember.fromJson(json.decode(e))).toList() : [];
   }
 
   static void saveBloodType(BloodType? bloodType) async {
@@ -57,8 +51,7 @@ class LocalStorage {
 
   static void saveFamilyMembers(List<FamilyMember> familyMembers) async {
     final prefs = await sharedPreferencesInstance;
-    prefs.setStringList(FAMILY_MEMBERS,
-        familyMembers.map((e) => jsonEncode(e.toJson())).toList());
+    prefs.setStringList(FAMILY_MEMBERS, familyMembers.map((e) => jsonEncode(e.toJson())).toList());
   }
 
   static Future<SharedPreferences> get sharedPreferencesInstance {

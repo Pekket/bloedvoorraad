@@ -36,7 +36,8 @@ class _AddFamilyMemberState extends State<AddFamilyMember> {
             autofocus: true,
             keyboardType: TextInputType.name,
             decoration: InputDecoration(
-                hintText: AppLocalizations.of(context)!.familyNameLabel),
+              hintText: AppLocalizations.of(context)!.familyNameLabel,
+            ),
             onChanged: (value) => _name = value.trim(),
           ),
           Container(
@@ -44,9 +45,7 @@ class _AddFamilyMemberState extends State<AddFamilyMember> {
             child: BloodTypeChooser(_bloodType, _updateBloodType),
           ),
           ElevatedButton(
-            onPressed: _name.isNotEmpty && _bloodType != null
-                ? () => widget.addMember(_name, _bloodType)
-                : null,
+            onPressed: _name.isNotEmpty && _bloodType != null ? () => widget.addMember(_name, _bloodType) : null,
             child: Text(AppLocalizations.of(context)!.save),
           ),
         ],

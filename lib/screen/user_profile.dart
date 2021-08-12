@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -27,14 +26,15 @@ class _UserProfileState extends State<UserProfile> {
     _tmpBloodType = context.read<UserProvider>().bloodType;
   }
 
-  void _handleBloodType(BloodType bloodType) =>
-      setState(() => _tmpBloodType = bloodType);
+  void _handleBloodType(BloodType bloodType) => setState(() => _tmpBloodType = bloodType);
 
   void _saveProfile() async {
     Provider.of<UserProvider>(context, listen: false).updateBloodType(_tmpBloodType!);
 
     Navigator.of(context).pushNamedAndRemoveUntil(
-        BloodTypesOverview.id, (Route<dynamic> route) => false);
+      BloodTypesOverview.id,
+      (Route<dynamic> route) => false,
+    );
   }
 
   @override

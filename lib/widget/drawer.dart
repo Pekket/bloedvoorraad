@@ -11,22 +11,20 @@ import '../screen/user_profile.dart';
 import '../user_provider.dart';
 
 class AppDrawer extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         children: [
-           DrawerHeader(
+          DrawerHeader(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   (context.read<UserProvider>().bloodType as BloodType).name,
-                  style: TextStyle( fontSize: 72),
+                  style: TextStyle(fontSize: 72),
                 ),
                 Spacer(),
-
                 TextButton(
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
@@ -35,7 +33,7 @@ class AppDrawer extends StatelessWidget {
                   onPressed: () => Navigator.pushNamed(context, UserProfile.id),
                   child: Row(
                     children: [
-                        Text(AppLocalizations.of(context)!.drawerChangeBloodType),
+                      Text(AppLocalizations.of(context)!.drawerChangeBloodType),
                       SizedBox(
                         width: 5,
                       ),
@@ -44,7 +42,7 @@ class AppDrawer extends StatelessWidget {
                   ),
                 )
               ],
-            )
+            ),
           ),
           ListTile(
             leading: Icon(Icons.family_restroom),

@@ -23,9 +23,7 @@ class BloodTypeChooser extends StatelessWidget {
           onPressed: () => _handleBloodType(type),
           style: ButtonStyle(
             padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 4.0)),
-            backgroundColor: type == _bloodType
-                ? MaterialStateProperty.all(Constants.PRIMARY_COLOR)
-                : MaterialStateProperty.all(Colors.transparent),
+            backgroundColor: type == _bloodType ? MaterialStateProperty.all(Constants.PRIMARY_COLOR) : MaterialStateProperty.all(Colors.transparent),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
@@ -34,8 +32,7 @@ class BloodTypeChooser extends StatelessWidget {
           ),
           child: Text(
             type.name,
-            style: TextStyle(
-                color: type == _bloodType ? Constants.WHITE_COLOR : Constants.PRIMARY_COLOR),
+            style: TextStyle(color: type == _bloodType ? Constants.WHITE_COLOR : Constants.PRIMARY_COLOR),
           ),
         );
       }).toList(),

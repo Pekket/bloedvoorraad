@@ -20,10 +20,14 @@ void main() async {
   await userProvider.init();
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
-      (value) => runApp(ChangeNotifierProvider(
-          create: (BuildContext context) => userProvider,
-          lazy: false,
-          child: App())));
+    (value) => runApp(
+      ChangeNotifierProvider(
+        create: (BuildContext context) => userProvider,
+        lazy: false,
+        child: App(),
+      ),
+    ),
+  );
 }
 
 class App extends StatelessWidget {
@@ -32,8 +36,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       locale: Provider.of<UserProvider>(context).locale,
-      onGenerateTitle: (BuildContext context) =>
-          AppLocalizations.of(context)!.appTitle,
+      onGenerateTitle: (BuildContext context) => AppLocalizations.of(context)!.appTitle,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
