@@ -1,5 +1,5 @@
 {
-  "appTitle": "You are a hero",
+  "appTitle": "Blood Stock",
   "save": "Save",
 
   "drawerChangeBloodType": "Change blood type",
@@ -8,32 +8,32 @@
   "drawerAboutApp": "About this app",
 
   "profileTitle": "Profile",
-  "profileChooseBloodType": "Choose blood type",
+  "profileChooseBloodType": "Pick your blood type",
   "profilePrivacy": "Your blood type will only be saved on this device",
 
-  "bloodSupplyCanDonate": "Can donate blood to:",
-  "bloodSupplyCanReceive": "Can receive blood from:",
+  "bloodSupplyCanDonate": "Can donate blood to groups:",
+  "bloodSupplyCanReceive": "Can receive blood from groups:",
   "bloodSupplyFetchError": "Something went wrong while retrieving the data.",
 
   "appointmentBtnLabel": "Make an appointment",
-  "appointmentBtnError": "Oops something went wrong. Go to rodekruis.be",
+  "appointmentBtnError": "Oops, something went wrong! Schedule your appointment at rodekruis.be.",
 
   "shareBtnLabel": "or motivate your friends",
-  "shareMessage": "Become a hero DONATE BLOOD!",
+  "shareMessage": "Become a hero and donate blood!",
 
-  "familyTitle":  "Add family member",
+  "familyTitle":  "Add a family member",
   "familyNameLabel": "Name",
-  "familyEmptyList": "No family member added yet",
+  "familyEmptyList": "No family members added yet",
 
   "settingsTitle": "Settings",
-  "settingsNotificationsSub": "We send a notification when the stock of your blood type is low",
-  "settingsNotificationsEnable": "Enable notifications",
+  "settingsNotificationsSub": "Receive a notification when your blood type runs low on stock.",
+  "settingsNotificationsEnable": "Notifications",
   "settingsLanguageTitle": "Language",
 
   "bloodSupplyStatusCritical": "Critical stock",
   "bloodSupplyStatusLow": "Low stock",
   "bloodSupplyStatusGood": "Sufficient stock",
-  "bloodSupplyStatusCriticalDescription": "The stock for this blood type is critical low.",
+  "bloodSupplyStatusCriticalDescription": "The stock for this blood type is critically low.",
   "bloodSupplyStatusLowDescription": "The stock for this blood type is low.",
   "bloodSupplyStatusGoodDescription": "The stock for this blood type is sufficient."
 }
