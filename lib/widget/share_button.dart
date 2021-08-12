@@ -5,8 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../constants.dart' as Constants;
 
 class ShareButton extends StatelessWidget {
-
-  void _shareMessage(BuildContext context) async => await Share.share(AppLocalizations.of(context)!.shareMessage + Constants.SHARE_URL );
+  void _shareMessage(BuildContext context) async => await Share.share(AppLocalizations.of(context)!.shareMessage + ' ' + Constants.SHARE_URL);
 
   @override
   Widget build(BuildContext context) {

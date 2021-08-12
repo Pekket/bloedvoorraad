@@ -1,3 +1,39 @@
 {
-  "appTitle": "Donneur"
+  "appTitle": "Réserve de Sang",
+  "save": "Sauvegarder",
+
+  "drawerChangeBloodType": "Changer mon groupe sanguin",
+  "drawerFamily": "Famille",
+  "drawerSettings": "Réglages",
+  "drawerAboutApp": "Informations",
+
+  "profileTitle": "Profil",
+  "profileChooseBloodType": "Choisissez votre groupe sanguin",
+  "profilePrivacy": "Votre groupe sanguin sera sauvegardé uniquement sur cet appareil",
+
+  "bloodSupplyCanDonate": "Peut donner du sang aux groupes:",
+  "bloodSupplyCanReceive": "Peut recevoir du sang des groupes:",
+  "bloodSupplyFetchError": "Une erreur est survenue lors du rafraîchissement",
+
+  "appointmentBtnLabel": "Prenez rendez-vous",
+  "appointmentBtnError": "Oups, une erreur s'est produite. Prenez rendez-vous sur donneurdesang.be.",
+
+  "shareBtnLabel": "ou convainquez vos amis",
+  "shareMessage": "Soyez un héros et donnez du sang!",
+
+  "familyTitle":  "Ajouter un membre de la famille",
+  "familyNameLabel": "Nom",
+  "familyEmptyList": "Aucun membre ajouté",
+
+  "settingsTitle": "Réglages",
+  "settingsNotificationsSub": "Recevez une notifications quand la réserve de votre groupe sanguin est faible.",
+  "settingsNotificationsEnable": "Notifications",
+  "settingsLanguageTitle": "Langue",
+
+  "bloodSupplyStatusCritical": "Réserve critique",
+  "bloodSupplyStatusLow": "Réserve faible",
+  "bloodSupplyStatusGood": "Réserve suffisante",
+  "bloodSupplyStatusCriticalDescription": "La réserve de sang de ce groupe est critiquement faible.",
+  "bloodSupplyStatusLowDescription": "La réserve de sang de ce groupe est faible.",
+  "bloodSupplyStatusGoodDescription": "La réserve de sang de ce groupe est suffisante."
 }

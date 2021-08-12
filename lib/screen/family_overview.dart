@@ -31,14 +31,13 @@ class _FamilyOverviewState extends State<FamilyOverview> {
 
   void _removeMember(index) {
     this.setState(() {
-        _familyMembers.removeAt(index);
-      });
+      _familyMembers.removeAt(index);
+    });
 
     LocalStorage.saveFamilyMembers(_familyMembers);
   }
 
   void _addMember(String name, BloodType bt) {
-
     this.setState(() {
       _familyMembers.add(FamilyMember(name, bt));
     });
@@ -110,6 +109,7 @@ class _FamilyOverviewState extends State<FamilyOverview> {
   }
 
   Widget get _bottomSheet => Padding(
-      padding: MediaQuery.of(context).viewInsets,
-      child: AddFamilyMember(_addMember));
+        padding: MediaQuery.of(context).viewInsets,
+        child: AddFamilyMember(_addMember),
+      );
 }

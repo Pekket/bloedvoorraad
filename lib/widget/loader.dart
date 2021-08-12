@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constants.dart' as Constants;
 
-
 class Loader extends StatelessWidget {
   final double _height;
 

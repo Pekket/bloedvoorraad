@@ -40,8 +40,7 @@ class UserProvider extends ChangeNotifier {
     if (_notificationEnabled)
       this._notificationEnabled = false;
     else
-      await NotificationService.requestPermission().then((notificationEnabled) =>
-          this._notificationEnabled = notificationEnabled);
+      await NotificationService.requestPermission().then((notificationEnabled) => this._notificationEnabled = notificationEnabled);
 
     notifyListeners();
 
@@ -60,7 +59,6 @@ class UserProvider extends ChangeNotifier {
   void _refreshTopic() {
     NotificationService.unsubscribeFromTopic();
 
-    if (this._notificationEnabled && this._bloodType != null)
-      NotificationService.subscribeToTopic(this._bloodType!.serverName);
+    if (this._notificationEnabled && this._bloodType != null) NotificationService.subscribeToTopic(this._bloodType!.serverName);
   }
 }

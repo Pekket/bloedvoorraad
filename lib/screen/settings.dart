@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -17,26 +16,30 @@ class AppSettings extends StatelessWidget {
         children: [
           _notificationsSetting(context),
           SizedBox(height: 16),
-          _languageSetting(context)
+          _languageSetting(context),
         ],
       ),
     );
   }
 
   Widget _notificationsSetting(BuildContext context) => SwitchListTile(
-        title: Text(AppLocalizations.of(context)!.settingsNotificationsEnable,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        title: Text(
+          AppLocalizations.of(context)!.settingsNotificationsEnable,
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
         subtitle: Text(AppLocalizations.of(context)!.settingsNotificationsSub),
-        onChanged: (_) => Provider.of<UserProvider>(context, listen: false)
-            .updateNotificationEnabled(),
+        onChanged: (_) => Provider.of<UserProvider>(context, listen: false).updateNotificationEnabled(),
         value: Provider.of<UserProvider>(context).notificationEnabled,
       );
 
   Widget _languageSetting(BuildContext context) => Column(
         children: [
           ListTile(
-              title: Text(AppLocalizations.of(context)!.settingsLanguageTitle,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold))),
+            title: Text(
+              AppLocalizations.of(context)!.settingsLanguageTitle,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          ),
           RadioListTile<Locale>(
             dense: true,
             title: const Text('Nederlands'),

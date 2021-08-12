@@ -1,7 +1,6 @@
 enum BloodType { apos, oneg, opos, aneg, bneg, bpos, abneg, abpos }
 
 extension BloodTypeExtension on BloodType {
-
   static BloodType? getBloodType(String value) {
     switch (value) {
       case "BloodType.apos":
@@ -70,19 +69,43 @@ extension BloodTypeExtension on BloodType {
   List<BloodType> get canDonate {
     switch (this) {
       case BloodType.apos:
-        return [BloodType.apos, BloodType.abpos];
+        return [
+          BloodType.apos,
+          BloodType.abpos,
+        ];
       case BloodType.oneg:
         return BloodType.values;
       case BloodType.opos:
-        return [BloodType.opos, BloodType.apos, BloodType.bpos, BloodType.abpos];
+        return [
+          BloodType.opos,
+          BloodType.apos,
+          BloodType.bpos,
+          BloodType.abpos,
+        ];
       case BloodType.aneg:
-        return [BloodType.aneg, BloodType.apos, BloodType.abpos, BloodType.abneg];
+        return [
+          BloodType.aneg,
+          BloodType.apos,
+          BloodType.abpos,
+          BloodType.abneg,
+        ];
       case BloodType.bneg:
-        return [BloodType.bneg, BloodType.bpos, BloodType.abpos, BloodType.abneg];
+        return [
+          BloodType.bneg,
+          BloodType.bpos,
+          BloodType.abpos,
+          BloodType.abneg,
+        ];
       case BloodType.bpos:
-        return [BloodType.bpos, BloodType.abpos];
+        return [
+          BloodType.bpos,
+          BloodType.abpos,
+        ];
       case BloodType.abneg:
-        return [BloodType.abneg, BloodType.abpos];
+        return [
+          BloodType.abneg,
+          BloodType.abpos,
+        ];
       case BloodType.abpos:
         return [BloodType.abpos];
     }
@@ -91,19 +114,43 @@ extension BloodTypeExtension on BloodType {
   List<BloodType> get canReceive {
     switch (this) {
       case BloodType.apos:
-        return [BloodType.opos, BloodType.oneg, BloodType.apos, BloodType.aneg];
+        return [
+          BloodType.opos,
+          BloodType.oneg,
+          BloodType.apos,
+          BloodType.aneg,
+        ];
       case BloodType.oneg:
         return [BloodType.oneg];
       case BloodType.opos:
-        return [BloodType.opos, BloodType.oneg];
+        return [
+          BloodType.opos,
+          BloodType.oneg,
+        ];
       case BloodType.aneg:
-        return [BloodType.aneg, BloodType.opos];
+        return [
+          BloodType.aneg,
+          BloodType.opos,
+        ];
       case BloodType.bneg:
-        return [BloodType.bneg, BloodType.oneg];
+        return [
+          BloodType.bneg,
+          BloodType.oneg,
+        ];
       case BloodType.bpos:
-        return [BloodType.bpos, BloodType.bneg, BloodType.opos, BloodType.oneg];
+        return [
+          BloodType.bpos,
+          BloodType.bneg,
+          BloodType.opos,
+          BloodType.oneg,
+        ];
       case BloodType.abneg:
-        return [BloodType.abneg, BloodType.bneg, BloodType.aneg, BloodType.aneg];
+        return [
+          BloodType.abneg,
+          BloodType.bneg,
+          BloodType.aneg,
+          BloodType.aneg,
+        ];
       case BloodType.abpos:
         return BloodType.values;
     }

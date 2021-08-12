@@ -18,7 +18,7 @@ class BloodTypeOverview extends StatelessWidget {
 
   _launchAppointment(BuildContext context) async {
     if (await canLaunch(Constants.APPOINTMENT_URL)) {
-       await launch(Constants.APPOINTMENT_URL);
+      await launch(Constants.APPOINTMENT_URL);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(_snackBar(context));
     }
@@ -50,10 +50,10 @@ class BloodTypeOverview extends StatelessWidget {
   }
 
   SnackBar _snackBar(BuildContext context) => SnackBar(
-      backgroundColor: Colors.red,
-      content: Text(
-        AppLocalizations.of(context)!.appointmentBtnError,
-        style: TextStyle(fontSize: 16),
-      ),
-    );
+        backgroundColor: Colors.red,
+        content: Text(
+          AppLocalizations.of(context)!.appointmentBtnError,
+          style: TextStyle(fontSize: 16),
+        ),
+      );
 }
