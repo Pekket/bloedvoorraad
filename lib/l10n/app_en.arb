@@ -1,6 +1,7 @@
 {
   "appTitle": "Blood Stock",
   "save": "Save",
+  "cancel": "Cancel",
 
   "drawerChangeBloodType": "Change blood type",
   "drawerFamily": "Family",
@@ -17,6 +18,7 @@
 
   "appointmentBtnLabel": "Make an appointment",
   "appointmentBtnError": "Oops, something went wrong! Schedule your appointment at rodekruis.be.",
+  "appointmentUrl": "https://www.rodekruis.be/en/what-can-you-do/give-blood/where-can-you-give-blood/",
 
   "shareBtnLabel": "or motivate your friends",
   "shareMessage": "Become a hero and donate blood!",
@@ -29,6 +31,8 @@
   "settingsNotificationsSub": "Receive a notification when your blood type runs low on stock.",
   "settingsNotificationsEnable": "Notifications",
   "settingsLanguageTitle": "Language",
+  "settingsDialogPopup": "Give permissions to send notifications to your device.",
+  "openSettings": "Open settings",
 
   "bloodSupplyStatusCritical": "Critical stock",
   "bloodSupplyStatusLow": "Low stock",

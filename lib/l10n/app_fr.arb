@@ -1,6 +1,7 @@
 {
   "appTitle": "Réserve de Sang",
   "save": "Sauvegarder",
+  "cancel": "Annuler",
 
   "drawerChangeBloodType": "Changer mon groupe sanguin",
   "drawerFamily": "Famille",
@@ -17,6 +18,7 @@
 
   "appointmentBtnLabel": "Prenez rendez-vous",
   "appointmentBtnError": "Oups, une erreur s'est produite. Prenez rendez-vous sur donneurdesang.be.",
+  "appointmentUrl": "https://www.rodekruis.be/fr/donner-du-sang/cherchez-un-lieu-de-prelevement-pres-de-chez-vous/",
 
   "shareBtnLabel": "ou convainquez vos amis",
   "shareMessage": "Soyez un héros et donnez du sang!",
@@ -29,6 +31,8 @@
   "settingsNotificationsSub": "Recevez une notifications quand la réserve de votre groupe sanguin est faible.",
   "settingsNotificationsEnable": "Notifications",
   "settingsLanguageTitle": "Langue",
+  "settingsDialogPopup": "Autoriser l’application à vous envoyer des notifications",
+  "openSettings": "Ouvrir les paramètres",
 
   "bloodSupplyStatusCritical": "Réserve critique",
   "bloodSupplyStatusLow": "Réserve faible",

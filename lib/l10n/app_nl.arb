@@ -1,6 +1,7 @@
 {
   "appTitle": "Bloedvoorraad",
   "save": "Opslaan",
+  "cancel": "Annuleer",
 
   "drawerChangeBloodType": "Wijzig je bloedgroep",
   "drawerFamily": "Familie",
@@ -17,6 +18,7 @@
 
   "appointmentBtnLabel": "Maak een afspraak",
   "appointmentBtnError": "Oeps, er ging wat mis! Surf voor een afspraak naar rodekruis.be.",
+  "appointmentUrl": "https://www.rodekruis.be/wat-kan-jij-doen/geef-bloed-of-plasma/waar-bloed-of-plasma-geven/",
 
   "shareBtnLabel": "of overtuig je vrienden",
   "shareMessage": "Wees een held en doneer bloed!",
@@ -29,6 +31,8 @@
   "settingsNotificationsSub": "Ontvang een notificatie wanneer je bloedgroep een lage voorraad heeft.",
   "settingsNotificationsEnable": "Notificaties",
   "settingsLanguageTitle": "Taal",
+  "settingsDialogPopup": "Geef permissie aan Bloedvoorraad om je notificaties te sturen.",
+  "openSettings": "Open instellingen",
 
   "bloodSupplyStatusCritical": "Kritische voorraad",
   "bloodSupplyStatusLow": "Lage voorraad",
