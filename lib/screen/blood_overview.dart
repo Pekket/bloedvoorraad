@@ -41,6 +41,7 @@ class _BloodTypesOverviewState extends State<BloodTypesOverview> {
           builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.hasData && _bloodType != null) {
               return ListView(
+                physics: BouncingScrollPhysics(),
                 padding: EdgeInsets.all(32.0),
                 children: [
                   MainBloodCard(snapshot.data.firstWhere((el) => el.type == _bloodType), true),
