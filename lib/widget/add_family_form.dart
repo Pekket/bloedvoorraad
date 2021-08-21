@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../model/blood_type.dart';
 import './type_chooser.dart';
+import '../model/blood_type.dart';
 
 class AddFamilyMember extends StatefulWidget {
   final Function addMember;
@@ -19,6 +19,10 @@ class _AddFamilyMemberState extends State<AddFamilyMember> {
 
   void _updateBloodType(BloodType bt) => setState(() {
         _bloodType = bt;
+      });
+
+  void _updateName(String name) => setState(() {
+        _name = name;
       });
 
   @override
@@ -38,14 +42,16 @@ class _AddFamilyMemberState extends State<AddFamilyMember> {
             decoration: InputDecoration(
               hintText: AppLocalizations.of(context)!.familyNameLabel,
             ),
-            onChanged: (value) => _name = value.trim(),
+            onChanged: _updateName,
           ),
           Container(
             height: 200,
             child: BloodTypeChooser(_bloodType, _updateBloodType),
           ),
           ElevatedButton(
-            onPressed: _name.isNotEmpty && _bloodType != null ? () => widget.addMember(_name, _bloodType) : null,
+            onPressed: _name.isNotEmpty && _bloodType != null
+                ? () => widget.addMember(_name, _bloodType)
+                : null,
             child: Text(AppLocalizations.of(context)!.save),
           ),
         ],
