@@ -1,11 +1,14 @@
+import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 import '../model/blood_type.dart';
+import '../widget/notification_permission_dialog.dart';
 
 class NotificationService {
   static final FirebaseMessaging _messaging = FirebaseMessaging.instance;
 
-  static Future<bool> requestPermission() async {
+  static Future<bool> requestPermission(BuildContext? context) async {
     NotificationSettings settings = await _messaging.requestPermission(
       alert: true,
       announcement: false,
@@ -16,7 +19,12 @@ class NotificationService {
       sound: true,
     );
 
-    return settings.authorizationStatus == AuthorizationStatus.authorized;
+    bool isAuthorized = settings.authorizationStatus == AuthorizationStatus.authorized;
+
+    if(Platform.isIOS && !isAuthorized && context != null)
+      showDialog(context: context, builder: (BuildContext context) => PermissionDialog());
+
+    return isAuthorized;
   }
 
   static void unsubscribeFromTopic() {

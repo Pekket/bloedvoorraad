@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart' as Constants;
-
 import '../model/blood_type.dart';
 import '../screen/blood_overview.dart';
 import '../user_provider.dart';
@@ -26,10 +26,12 @@ class _UserProfileState extends State<UserProfile> {
     _tmpBloodType = context.read<UserProvider>().bloodType;
   }
 
-  void _handleBloodType(BloodType bloodType) => setState(() => _tmpBloodType = bloodType);
+  void _handleBloodType(BloodType bloodType) =>
+      setState(() => _tmpBloodType = bloodType);
 
   void _saveProfile() async {
-    Provider.of<UserProvider>(context, listen: false).updateBloodType(_tmpBloodType!);
+    Provider.of<UserProvider>(context, listen: false)
+        .updateBloodType(_tmpBloodType!);
 
     Navigator.of(context).pushNamedAndRemoveUntil(
       BloodTypesOverview.id,
@@ -42,7 +44,7 @@ class _UserProfileState extends State<UserProfile> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Color(Constants.PROFILE_BACKGROUND),
+      backgroundColor: Constants.PROFILE_BACKGROUND,
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.profileTitle),
         leading: Container(),
@@ -71,7 +73,12 @@ class _UserProfileState extends State<UserProfile> {
                 AppLocalizations.of(context)!.save,
               ),
             ),
-            Text(AppLocalizations.of(context)!.profilePrivacy),
+            AutoSizeText(
+              AppLocalizations.of(context)!.profilePrivacy,
+              softWrap: false,
+              minFontSize: 6,
+              maxLines: 1,
+            ),
           ],
         ),
       ),

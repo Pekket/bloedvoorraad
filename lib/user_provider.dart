@@ -7,10 +7,12 @@ import '../service/notification_service.dart';
 class UserProvider extends ChangeNotifier {
   Locale _locale = Locale('nl');
   BloodType? _bloodType;
-  bool _notificationEnabled = true;
+  bool _notificationEnabled = false;
 
   Locale get locale => _locale;
+
   bool get notificationEnabled => _notificationEnabled;
+
   BloodType? get bloodType => _bloodType;
 
   Future init() async {
@@ -18,8 +20,14 @@ class UserProvider extends ChangeNotifier {
       this.updateLocale(locale);
     });
 
-    await LocalStorage.getSavedNotificationsEnabled().then((enabled) {
-      _notificationEnabled = enabled ?? true;
+    await NotificationService.requestPermission(null).then((notificationsPermitted) async {
+      if(notificationsPermitted) {
+         await LocalStorage.getSavedNotificationsEnabled().then((enabled) {
+           this._notificationEnabled = enabled != null ? enabled : notificationsPermitted;
+        });
+      }
+      LocalStorage.saveNotificationEnabled(_notificationEnabled);
+
     });
 
     await LocalStorage.getSavedBloodType().then((bt) {
@@ -36,11 +44,14 @@ class UserProvider extends ChangeNotifier {
     }
   }
 
-  void updateNotificationEnabled() async {
+  void updateNotificationEnabled(BuildContext context) async {
     if (_notificationEnabled)
       this._notificationEnabled = false;
-    else
-      await NotificationService.requestPermission().then((notificationEnabled) => this._notificationEnabled = notificationEnabled);
+    else {
+      await NotificationService.requestPermission(context).then(
+          (notificationEnabled) =>
+              this._notificationEnabled = notificationEnabled);
+    }
 
     notifyListeners();
 
@@ -59,6 +70,7 @@ class UserProvider extends ChangeNotifier {
   void _refreshTopic() {
     NotificationService.unsubscribeFromTopic();
 
-    if (this._notificationEnabled && this._bloodType != null) NotificationService.subscribeToTopic(this._bloodType!.serverName);
+    if (this._notificationEnabled && this._bloodType != null)
+      NotificationService.subscribeToTopic(this._bloodType!.serverName);
   }
 }

@@ -17,8 +17,9 @@ class BloodTypeOverview extends StatelessWidget {
   const BloodTypeOverview(this._bloodSupply);
 
   _launchAppointment(BuildContext context) async {
-    if (await canLaunch(Constants.APPOINTMENT_URL)) {
-      await launch(Constants.APPOINTMENT_URL);
+    String url = AppLocalizations.of(context)!.appointmentUrl;
+    if (await canLaunch(url)) {
+      await launch(url);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(_snackBar(context));
     }

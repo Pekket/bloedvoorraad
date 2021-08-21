@@ -12,6 +12,7 @@ class AppSettings extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(AppLocalizations.of(context)!.settingsTitle)),
       body: ListView(
+        physics: BouncingScrollPhysics(),
         padding: EdgeInsets.all(16),
         children: [
           _notificationsSetting(context),
@@ -28,7 +29,7 @@ class AppSettings extends StatelessWidget {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         subtitle: Text(AppLocalizations.of(context)!.settingsNotificationsSub),
-        onChanged: (_) => Provider.of<UserProvider>(context, listen: false).updateNotificationEnabled(),
+        onChanged: (_) => Provider.of<UserProvider>(context, listen: false).updateNotificationEnabled(context),
         value: Provider.of<UserProvider>(context).notificationEnabled,
       );
 
